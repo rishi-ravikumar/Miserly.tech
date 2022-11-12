@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<table>
+    <tr>
+      <th>Column1</th>
+      <th>Column2</th>
+    </tr>
+    {% for item in table_info %}
+      <tr>
+        <td>{{ item.0 }}</td>
+        <td>{{ item.1 }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
