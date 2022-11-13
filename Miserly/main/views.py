@@ -37,7 +37,7 @@ def search(request):
 
 	    number_of_outer_results = 3
 
-	    for j in range(number_of_outer_results):
+	    for j in range(min(number_of_outer_results, len(results))):
 	        productURL = "https://www.trolley.co.uk/" + results[j].find("a", class_=None).get("href")
 
 	        tempDict = dict()
