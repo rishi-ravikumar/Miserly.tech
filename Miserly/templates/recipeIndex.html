@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Kavin and Ananta">
-    <title>Miserly</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+    <title>Miserly Recipes</title>
 
 
 <!-- CSS only -->
@@ -84,14 +82,14 @@
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Groceries</a></li>
-        <li class="nav-item"><a href="/recepes" class="nav-link">Recipes</a></li>
+        <li class="nav-item"><a href="/recipes" class="nav-link">Recipes</a></li>
       </ul>
     </header>
   </div>
 
 
   <div class="px-4 py-5 my-5 text-center">
-   <h1 class="display-5 fw-bold">Find the best prices for your Groceries!</h1>
+   <h1 class="display-5 fw-bold">Find ingredients for whatever dish you crave!</h1>
     <div class="col-lg-6 mx-auto">
 
       <p class="lead mb-4">With Great Price Comes Great Depression.</p>
@@ -100,11 +98,11 @@
         <form id="groceryForm">
 
           <div class="formText">
-          <input id="groceryField" type="text" class="form-control rounded" placeholder="Enter Grocery Item"></input>
+          <input id="groceryField" type="text" class="form-control rounded" placeholder="Enter Recipe Name"></input>
           </div>
           <p></p>
           <div class="formSubmit">
-          <button id = "addButton" type="button" class="btn btn-outline-primary">Add</button>
+          <button id = "addButton" type="button" class="btn btn-outline-primary">Find Ingredients</button>
           </div>
           <p></p>
 
@@ -115,7 +113,7 @@
         <p></p>
       </div>
 
-      <div class="list-group w-auto">
+      <!-- <div class="list-group w-auto">
         <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
           <div class="d-flex gap-2 w-100 justify-content-center">
             <div>
@@ -126,14 +124,14 @@
       </div>
       <div>
         <p></p>
-      </div>
+      </div> -->
 
     <form id="result_form" role="search" method = "POST" action="/search/"> {% csrf_token %}
     <div class="relative mb-4 md:ml-auto flex flex-wrap items-center text-base justify-center">
       <input type="hidden" id="search_string" name="search_string" class="w-1/2full bg-white rounded border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-5 leading-8 transition-colors duration-200 ease-in-out">
     </div>
     </form>
-      <button id = "searchButton" class="btn btn-primary btn-lg px-4 gap-3">Search</button>
+      <button id = "searchButton" class="btn btn-primary btn-lg px-4 gap-3">Find ingredients</button>
 
     </div>
 
