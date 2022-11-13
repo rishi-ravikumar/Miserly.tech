@@ -74,15 +74,14 @@
 
   <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <img src="MiserlyLogo.png" width="45" height="45">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="50" height="42"><use xlink:href="#bootstrap"/></svg>
+      <img src="https://i.ibb.co/j6pmLd2/Miserly-Logo.png" class="bi me-2" width="50" height="42">      
         <span class="fs-4"><strong>Miserly</strong></span>
       </a>
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Groceries</a></li>
-        <li class="nav-item"><a href="/recipes" class="nav-link">Recipes</a></li>
+        <li class="nav-item"><a href="/recipe-search/" class="nav-link">Recipes</a></li>
       </ul>
     </header>
   </div>
@@ -95,16 +94,16 @@
       <p class="lead mb-4">With Great Price Comes Great Depression.</p>
 
       <div class="input-form">
-        <form id="groceryForm">
+        <form id="result_form" role="search" method = "POST" action="/recipe-result/"> {% csrf_token %}
 
           <div class="formText">
-          <input id="groceryField" type="text" class="form-control rounded" placeholder="Enter Recipe Name"></input>
+          <input type="text" id="search_string" name="search_string" placeholder="Enter Recpie Name"  class="form-control rounded">
           </div>
-          <p></p>
+          <br>
+          <button id = "searchButton" type="submit" class="btn btn-primary btn-lg px-4 gap-3">Find Ingredients</button>
           <div class="formSubmit">
-          <button id = "addButton" type="button" class="btn btn-outline-primary">Find Ingredients</button>
+    </div>
           </div>
-          <p></p>
 
         </form>
       </div>
@@ -113,6 +112,7 @@
         <p></p>
       </div>
 
+    </div>
       <!-- <div class="list-group w-auto">
         <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
           <div class="d-flex gap-2 w-100 justify-content-center">
@@ -126,31 +126,31 @@
         <p></p>
       </div> -->
 
-    <form id="result_form" role="search" method = "POST" action="/search/"> {% csrf_token %}
+<!--     <form id="result_form" role="search" method = "POST" action="/recipe-result/"> {% csrf_token %}
     <div class="relative mb-4 md:ml-auto flex flex-wrap items-center text-base justify-center">
       <input type="hidden" id="search_string" name="search_string" class="w-1/2full bg-white rounded border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-5 leading-8 transition-colors duration-200 ease-in-out">
-    </div>
-    </form>
-      <button id = "searchButton" class="btn btn-primary btn-lg px-4 gap-3">Find ingredients</button>
 
-    </div>
+    </form> -->
+      
+
+<!--     </div> -->
 
   </div>
 
-  <script>
+<!--   <script>
     var GroceryItem;
     const GroceryArray = [];  
 
-    function addGroceries() {
-      var GroceryItem = document.getElementById('groceryField').value;
-      document.getElementById('groceryField').value = "";
-      var result = document.getElementById('result');
-      var search_string = document.getElementById('search_string');
+    // function addGroceries() {
+    //   var GroceryItem = document.getElementById('groceryField').value;
+    //   document.getElementById('groceryField').value = "";
+    //   var result = document.getElementById('result');
+    //   var search_string = document.getElementById('search_string');
 
 
-      result.innerHTML = result.innerHTML +  GroceryItem + '<br>';
-      search_string.value = search_string.value +  GroceryItem + ',';
-    }
+    //   result.innerHTML = result.innerHTML +  GroceryItem + '<br>';
+    //   search_string.value = search_string.value +  GroceryItem + ',';
+    // }
 
     function sendGroceries() {
       //do something
@@ -160,25 +160,25 @@
       // $.post(Url, result, sendGroceries(result, status) {
       //   console.log('${result} and status is ${status}')
       // });
-      document.getElementById('result').innerHTML="";
-      document.getElementById('groceryField').value="";
+      // document.getElementById('result').innerHTML="";
+      // document.getElementById('groceryField').value="";
       document.forms["result_form"].submit();
       document.forms["result_form"].reset();
     }
 
-    var addButton = document.getElementById('addButton');
-    addButton.addEventListener('click', addGroceries, false);
+    // var addButton = document.getElementById('addButton');
+    // addButton.addEventListener('click', addGroceries, false);
     var searchButton = document.getElementById('searchButton');
     searchButton.addEventListener('click', sendGroceries, false);
 
-    </script>  
+    </script>   -->
   
 
 </main>
   
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
+<!--     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+ -->
       
   </body>
 </html>

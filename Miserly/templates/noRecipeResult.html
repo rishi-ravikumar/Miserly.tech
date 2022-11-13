@@ -73,6 +73,7 @@
   <div class="container">
     
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="https://i.ibb.co/j6pmLd2/Miserly-Logo.png" class="bi me-2" width="50" height="42">
         <span class="fs-4"><strong>Miserly</strong></span>
@@ -86,51 +87,7 @@
   </div>
 
   <div class="text-center">
-    <h2 class="header text-center">We Found:</h2>
-    <a class="btn btn-success" href="index.html" role="button" target="_blank">{{table_info.recipe_title}}</a>
-    <br>
-  </div>
-
-<br>
-  <div class="container"><!-- div 1 open -->
-    <!-- option 1  name and description-->
-    <h4 id ="optionName" class="header text-left"><a href={{table_info.recipe_url}}>Link to the Recipe</a></h4>
-    <div><!-- div 2 open -->
-
-        <!-- table -->
-        <table id="optionTable" class="table">
-          <thead>
-            <tr>
-              <th id = "ing" scope="col">Ingredients</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in table_info.ingredients %}
-            <tr>
-              <td class = "ingredient" scope="col">{{item}}</th>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-
-    </div><!-- div 2 close -->
-  </div><!-- div 1 close -->
-    <br>
-     <div class="d-flex gap-2 w-100 justify-content-center">
-    <div class="input-form">
-        <form id="result_form" role="search" method = "POST" action="/search/"> {% csrf_token %}
-
-          <div class="formText">
-          <input type="hidden" id="search_string" name="search_string" placeholder="Enter Recpie Name"  class="form-control rounded">
-          </div>
-          <br>
-          <button id = "searchButton" type="submit" class="btn btn-primary btn-lg px-4 gap-3">Search For Ingredients</button>
-          <div class="formSubmit">
-    </div>
-          </div>
-
-        </form>
-      </div>
+    <h2 class="header text-center">No Results Found</h2>
     </div>
 
   <script>

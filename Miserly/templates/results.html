@@ -73,15 +73,13 @@
 
   <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <img src="MiserlyLogo.png" width="45" height="45">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="50" height="42"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4"><strong>Miserly</strong></span>
+        <img src="https://i.ibb.co/j6pmLd2/Miserly-Logo.png" class="bi me-2" width="50" height="42">
+        <span class="fs-4">Miserly</span>
       </a>
-
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Groceries</a></li>
-        <li class="nav-item"><a href="/recipeIndex.html" class="nav-link">Recipes</a></li>
+        <li class="nav-item"><a href="/recipe-search/" class="nav-link">Recipes</a></li>
       </ul>
     </header>
   </div>
@@ -101,6 +99,9 @@
     <p></p>
     {% for item in search.results %} 
       <!-- option 1  name and description-->
+<!--       <script>
+        var count = 0 
+      </script> -->
       <h4 id ="optionName" class="header text-left">{{item.item_name}} ({{item.item_des}})</h4>
 <!--       <div> --><!-- div 3 open -->
           <p></p>
@@ -115,29 +116,57 @@
             <tbody>
             {% for supermarket in item.supermarkets %}
               <tr>
-                <td id = "supermarketName" >{{ supermarket.0 }}</td>
-                <td id = "priceValue" = >{{ supermarket.1 }}</td>
+                <td id = "supermarketName" >{{supermarket.0}}</td>
+                <td id = "priceValue" = >{{supermarket.1}}</td>
               </tr>
-            </tbody>
             {% endfor %}
+            </tbody>
+<!--             <script>
+              count++;
+              if (count == 1) {
+                  optionTable.rows[1].cells[1].parentElement.style.background="yellow";
+              }
+
+            </script> -->
           </table>
     {% endfor %}
+<!--       <script>
+        count = 0 
+      </script> -->
       </div> <!-- div 3 open -->
-      
-  {% endfor %}
+    {% endfor %}  
     </div><!-- div 2 close -->
     
+  
     <br>
+<!--      <script>
+        var outerTable = document.getElementById("itemName");
+        
+      
+        for(var j=1;j<outerTable.length;j++)
+        {var middleTable = document.getElementById("optionName");
+          for(var k=1;k<middleTable.length;k++){
+             var table = document.getElementById("optionTable");
+
+        var minVal = 0;
+        for(var i = 1; i < table.rows.length; i++)
+        {
+            if(i === 1){
+                minVal = table.rows[i].cells[1]; 
+            }
+            else if(minVal.innerHTML > table.rows[i].cells[1].innerHTML){   
+                minVal = table.rows[i].cells[1];
+            }
+        }
+}}
+        minVal.parentElement.style.background="yellow";
+      </script> -->
   </div>   <!-- div 1 close -->
 
-  <script>
-
-  </script>  
-  
 
 </main>
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      
+  <!--   <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+       -->
   </body>
 </html>
