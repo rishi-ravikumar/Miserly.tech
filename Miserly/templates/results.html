@@ -76,7 +76,7 @@
       <img src="MiserlyLogo.png" width="45" height="45">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <svg class="bi me-2" width="50" height="42"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">Miserly</span>
+        <span class="fs-4"><strong>Miserly</strong></span>
       </a>
 
       <ul class="nav nav-pills">
@@ -88,21 +88,22 @@
 
   <div>
     <h1 class="header text-center">Let's Compare!</h1>
-    <br>
   </div>
 
   
   <div class="container">   <!-- div 1 open -->
     <!-- Item 1  name-->
   {% for search in table_info %} 
+    <br>
     <h1 id ="itemName" class="header text-left">{{search.search_name}}</h1>
     
     <div class="container"> <!-- div 2 open -->
+    <p></p>
     {% for item in search.results %} 
       <!-- option 1  name and description-->
       <h4 id ="optionName" class="header text-left">{{item.item_name}} ({{item.item_des}})</h4>
 <!--       <div> --><!-- div 3 open -->
-
+          <p></p>
           <!-- table -->
           <table id="optionTable" class="table">
             <thead>
