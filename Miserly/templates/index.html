@@ -69,7 +69,6 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
   </head>
   <body>
     
@@ -107,8 +106,8 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Groceries</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
+        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Groceries</a></li>
+        <li class="nav-item"><a href="/recepes" class="nav-link">Recipes</a></li>
       </ul>
     </header>
   </div>
@@ -152,9 +151,12 @@
         <p></p>
       </div>
 
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button id = "searchButton" type="button" class="btn btn-primary btn-lg px-4 gap-3">Search</button>
-      </div>
+    <form id="result_form" role="search" method = "POST" action="/search/"> {% csrf_token %}
+    <div class="relative mb-4 md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <input type="hidden" id="search_string" name="search_string" class="w-1/2full bg-white rounded border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-5 leading-8 transition-colors duration-200 ease-in-out">
+    </div>
+    </form>
+      <button id = "searchButton" class="btn btn-primary btn-lg px-4 gap-3">Search</button>
 
     </div>
 
@@ -168,19 +170,31 @@
       var GroceryItem = document.getElementById('groceryField').value;
       document.getElementById('groceryField').value = "";
       var result = document.getElementById('result');
+      var search_string = document.getElementById('search_string');
 
 
       result.innerHTML = result.innerHTML +  GroceryItem + '<br>';
+      search_string.value = search_string.value +  GroceryItem + ',';
     }
 
     function sendGroceries() {
       //do something
+      // const Url="/home";
+      // var result = document.getElementById('result');
+
+      // $.post(Url, result, sendGroceries(result, status) {
+      //   console.log('${result} and status is ${status}')
+      // });
+      document.getElementById('result').innerHTML="";
+      document.getElementById('groceryField').value="";
+      document.forms["result_form"].submit();
+      document.forms["result_form"].reset();
     }
 
     var addButton = document.getElementById('addButton');
     addButton.addEventListener('click', addGroceries, false);
     var searchButton = document.getElementById('searchButton');
-    addButton.addEventListener('click', Groceries, false);
+    searchButton.addEventListener('click', sendGroceries, false);
 
     </script>  
   

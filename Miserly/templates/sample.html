@@ -9,7 +9,8 @@
 {% for search in table_info %} 
 <h1>{{search.search_name}}</h2>
   {% for item in search.results %} 
-  <h3>{{item.item_name}} -- {{item.item_des}}</p>
+  <h3>Product Name:{{item.item_name}}</h4>
+  <h3>Product Description:{{item.item_des}}</h4>
     <table>
         <tr>
           <th>Supermarket</th>
