@@ -6,20 +6,23 @@
   <title></title>
 </head>
 <body>
-{% for item in table_info %} 
-<p>{{item.name}}</p>
-  <table>
-      <tr>
-        <th>Supermarket</th>
-        <th>Price</th>
-      </tr>
-      {% for supermarket in item.supermarkets %}
+{% for search in table_info %} 
+<h1>{{search.search_name}}</h2>
+  {% for item in search.results %} 
+  <h3>{{item.item_name}} -- {{item.item_des}}</p>
+    <table>
         <tr>
-          <td>{{ supermarket.0 }}</td>
-          <td>{{ supermarket.1 }}</td>
+          <th>Supermarket</th>
+          <th>Price</th>
         </tr>
-      {% endfor %}
-    </table>
+        {% for supermarket in item.supermarkets %}
+          <tr>
+            <td>{{ supermarket.0 }}</td>
+            <td>{{ supermarket.1 }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+  {% endfor %}
 {% endfor %}
 </body>
 </html>
